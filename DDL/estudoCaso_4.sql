@@ -15,7 +15,7 @@ ender_rua varchar(100) not null,
 ender_numrua varchar(10) not null
 );
 alter table endereco add ender_referencia varchar(10);
-alter table endereco change ender_referencia ender_proximidades varchar(10);
+alter table endereco change column ender_referencia ender_proximidades varchar(10);
 alter table endereco modify ender_proximidades varchar(45);
 alter table endereco drop column ender_proximidades;
 
@@ -28,7 +28,7 @@ modal_duracao int not null,
 modal_capacidade int not null
 );
 alter table modalidades add modal_metas varchar(100);
-alter table modalidades change modal_metas modal_competicao varchar(100);
+alter table modalidades change column modal_metas modal_competicao varchar(100);
 alter table modalidades modify modal_competicao text;
 alter table modalidades drop column modal_competicao;
 
@@ -45,7 +45,7 @@ aluno_endereco int not null,
 constraint FK_aluno_endereco foreign key(aluno_endereco) references endereco(cod_ender)
 );
 alter table alunos add dataConclusao int;
-alter table alunos change dataConclusao aluno_dataConclusao int;
+alter table alunos change column dataConclusao aluno_dataConclusao int;
 alter table alunos modify aluno_dataConclusao date;
 alter table alunos drop column aluno_dataConclusao;
 
@@ -61,7 +61,7 @@ instr_endereco int not null,
 constraint FK_instr_endereco foreign key(instr_endereco) references endereco(cod_ender)
 );
 alter table instrutores add formacao varchar(50);
-alter table instrutores change formacao instr_formacao varchar(50);
+alter table instrutores change column formacao instr_formacao varchar(50);
 alter table instrutores modify instr_formacao varchar(100);
 alter table instrutores drop column instr_formacao;
 
@@ -77,7 +77,7 @@ constraint FK_aulas_modalidades foreign key(aulas_modalidades) references modali
 constraint FK_aula_instrutores foreign key(aulas_instrutores) references instrutores(cod_instr)
 );
 alter table aulas add aulas_duracao int;
-alter table aulas change aulas_duracao aulas_cargaHoraria int;
+alter table aulas change column aulas_duracao aulas_cargaHoraria int;
 alter table aulas modify aulas_cargaHoraria varchar(20);
 alter table aulas drop column aulas_cargaHoraria;
 
@@ -93,7 +93,7 @@ constraint FK_planos_aluno foreign key(planos_aluno) references alunos(cod_aluno
 constraint FK_planos_instrutores foreign key(planos_instrutores) references instrutores(cod_instr)
 );
 alter table planosTreinamento add Metas varchar(20);
-alter table planosTreinamento change Metas planos_metas varchar(20);
+alter table planosTreinamento change column Metas planos_metas varchar(20);
 alter table planosTreinamento modify planos_metas varchar(50);
 alter table planosTreinamento drop column planos_metas;
 
@@ -108,7 +108,7 @@ constraint FK_pagamento_aluno foreign key(pagamento_aluno) references alunos(cod
 );
 
 alter table pagamentos add metodo enum('pix');
-alter table pagamentos change metodo pagamento_metodo enum('pix');
+alter table pagamentos change column metodo pagamento_metodo enum('pix');
 alter table pagamentos modify pagamento_metodo enum('pix', 'boleto');
 alter table pagamentos drop column pagamento_metodo;
 
@@ -123,7 +123,7 @@ constraint FK_idAula foreign key(idAula) references aulas(id_aulas)
 );
 
 alter table alunos_aulas add chamada varchar(100);
-alter table alunos_aulas change chamada alau_chamada varchar(100);
+alter table alunos_aulas change column chamada alau_chamada varchar(100);
 alter table alunos_aulas modify alau_chamada text;
 alter table alunos_aulas drop column alau_chamada;
 
@@ -137,7 +137,7 @@ constraint FK_almo_modalidades foreign key(almo_modalidades) references modalida
 );
 
 alter table aluno_modalidades add quantidade varchar(100);
-alter table aluno_modalidades change quantidade quantd_alunopormodal varchar(100);
+alter table aluno_modalidades change column quantidade quantd_alunopormodal varchar(100);
 alter table aluno_modalidades modify quantd_alunopormodal int;
 alter table aluno_modalidades drop column quantd_alunopormodal;
 

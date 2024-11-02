@@ -1,4 +1,3 @@
-#drop schema estudoCaso_3;
 create schema estudoCaso_3;
 
 use estudoCaso_3;

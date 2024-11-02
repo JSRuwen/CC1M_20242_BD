@@ -16,7 +16,7 @@ numrua_passag varchar(10)
 );
 
 alter table passageiros add idade_pass datetime;
-alter table passageiros change idade_pass aniversario_pass datetime;
+alter table passageiros change column idade_pass aniversario_pass datetime;
 alter table passageiros modify aniversario_pass date;
 alter table passageiros drop column aniversario_pass;
 
@@ -34,7 +34,7 @@ cep_func varchar(20) not null
 );
 
 alter table funcionarios add status_func enum('Bem','Ruim');
-alter table funcionarios change status_func saude_func enum('Bem','Ruim');
+alter table funcionarios change column status_func saude_func enum('Bem','Ruim');
 alter table funcionarios modify saude_func enum('Bem', 'Moderado', 'Ruim');
 alter table funcionarios drop column saude_func;
 
@@ -49,7 +49,7 @@ cep_aeroport varchar(20) not null
 );
 
 alter table aeroportos add tempo_aeroporto text;
-alter table aeroportos change tempo_aeroporto tempohoje_aeroporto text;
+alter table aeroportos change column tempo_aeroporto tempohoje_aeroporto text;
 alter table aeroportos modify tempohoje_aeroporto varchar(50);
 alter table aeroportos drop column tempohoje_aeroporto;
 
@@ -61,7 +61,7 @@ capacidade_aeron int not null
 );
 
 alter table aeronaves add durabilidade_aeron varchar(45);
-alter table aeronaves change durabilidade_aeron tempUso_aeron varchar(45);
+alter table aeronaves change column durabilidade_aeron tempUso_aeron varchar(45);
 alter table aeronaves modify tempUso_aeron datetime;
 alter table aeronaves drop column tempUso_aeron;
 
@@ -80,7 +80,7 @@ constraint FK_idAeronave_voos foreign key (idAeronave_voos) references aeronaves
 );
 
 alter table voos add kmPercorridos_voos datetime;
-alter table voos change kmPercorridos_voos velocidadeKm_voos datetime;
+alter table voos change column kmPercorridos_voos velocidadeKm_voos datetime;
 alter table voos modify velocidadeKm_voos decimal(6,2);
 alter table voos drop column velocidadeKm_voos;
 
@@ -95,7 +95,7 @@ constraint FK_idVoo_reserv foreign key(idVoo_reserv) references voos(id_voos)
 );
 
 alter table reservas add comprovante_reserv varchar(150);
-alter table reservas change comprovante_reserv recibo_reserv varchar(150);
+alter table reservas change column comprovante_reserv recibo_reserv varchar(150);
 alter table reservas modify recibo_reserv text;
 alter table reservas drop column recibo_reserv;
 
@@ -110,7 +110,7 @@ constraint FK_idFunc_operac foreign key(idFunc_operac) references funcionarios(c
 );
 
 alter table operacoes_voo add lingua_operacao text;
-alter table operacoes_voo change lingua_operacao idioma_operacao text;
+alter table operacoes_voo change column lingua_operacao idioma_operacao text;
 alter table operacoes_voo modify idioma_operacao varchar(50);
 alter table operacoes_voo drop column idioma_operacao;
 
