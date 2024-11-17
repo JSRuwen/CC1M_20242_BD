@@ -1,12 +1,5 @@
 USE estudoCaso_1;
 
-/*
-delete from fornecedores;
-delete from filiais;
-delete from produtos;
-delete from pedidos;
-delete from recebimentos;
- */
 
 insert into fornecedores(cod_forn, nome_forn, rua_forn, numrua_forn, bairro_forn, cidade_forn, estado_forn, pais_forn, codpostal_forn,telefone_forn, contato_forn) values
 (1, 'Carrefour', 'rua da lama','22','jardim da penha','vitoria','ES','brasil','290120145','27-999999999', 'contatocarrefour@gmail.com'),
